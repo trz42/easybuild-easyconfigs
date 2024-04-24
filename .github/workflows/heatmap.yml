@@ -25,5 +25,8 @@ jobs:
               source /cvmfs/software.eessi.io/versions/2023.06/init/bash
               module load Python/3.11.3-GCCcore-12.3.0
               command -V python3
+              python3 --version
               module load gnuplot/5.4.8-GCCcore-12.3.0
               command -V gnuplot
+              gnuplot --version
+              echo
