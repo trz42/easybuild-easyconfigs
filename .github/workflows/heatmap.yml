@@ -33,5 +33,5 @@ jobs:
 
         - name: Create heatmap
           run: |
-              pwd
-              ls
+              .github/workflows/git-heatmap.py --author=boegel . > heatmap.dat
+              cat heatmap.dat

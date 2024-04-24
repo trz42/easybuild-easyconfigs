@@ -38,6 +38,8 @@ print('set size ratio 7.0/24.0\n'
       'set mxtics 2\n'
       'set mytics 2\n'
       'set grid front mxtics mytics linetype -1 linecolor rgb \'black\'\n'
+      'set terminal png\n'
+      'set output "heatmap.png"\n'
       'plot "-" matrix with image notitle')
 for row in range(7):
     for col in range(24):
