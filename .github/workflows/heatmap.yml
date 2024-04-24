@@ -36,5 +36,8 @@ jobs:
 
         - name: Create heatmap
           run: |
+              source /cvmfs/software.eessi.io/versions/2023.06/init/bash
+              module load Python/3.11.3-GCCcore-12.3.0
+              module load gnuplot/5.4.8-GCCcore-12.3.0
               .github/workflows/git-heatmap.py --author="Kenneth Hoste" . > heatmap.dat
               gnuplot heatmap.dat
