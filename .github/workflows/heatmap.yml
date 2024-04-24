@@ -30,3 +30,8 @@ jobs:
               command -V gnuplot
               gnuplot --version
               echo
+
+        - name: Create heatmap
+          run: |
+              pwd
+              ls
