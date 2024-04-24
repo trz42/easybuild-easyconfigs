@@ -1,0 +1,28 @@
+name: Commit Heatmap
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+concurrency:
+  cancel-in-progress: true
+
+jobs:
+  setup-eessi-and-create-heatmap:
+    runs-on: ubuntu-22.04
+    steps:
+        - name: Check out easyconfigs repository
+          uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+        - name: Mount EESSI CernVM-FS repository
+          uses: cvmfs-contrib/github-action-cvmfs@55899ca74cf78ab874bdf47f5a804e47c198743c # v4.0
+          with:
+              cvmfs_http_proxy: DIRECT
+
+        - name: Test availability of EESSI, Python and gnuplot
+          run: |
+              source /cvmfs/pilot.nessi.no/versions/2023.06/init/bash
+              module load Python/3.11.3-GCCcore-12.3.0
+              command -V python3
+              module load gnuplot/5.4.8-GCCcore-12.3.0
+              command -V gnuplot
