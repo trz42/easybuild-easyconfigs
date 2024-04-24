@@ -32,3 +32,10 @@ jobs:
               ls -l
               gnuplot heatmap.dat
               ls -l
+
+        - name: Keep heatmap.png
+          uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+          with:
+              name: commit-heatmap
+              path: heatmap.png
+              retention-days: 7
