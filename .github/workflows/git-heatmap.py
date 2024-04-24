@@ -39,6 +39,7 @@ print('set size ratio 7.0/24.0\n'
       'set grid front mxtics mytics linetype -1 linecolor rgb \'black\'\n'
       'set terminal png\n'
       'set output "heatmap.png"\n'
+      'load ".github/workflows/YlOrRd.plt"\n'
       'plot "-" matrix with image notitle')
 for row in range(7):
     for col in range(24):
