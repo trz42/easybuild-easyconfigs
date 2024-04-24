@@ -37,5 +37,4 @@ jobs:
         - name: Create heatmap
           run: |
               .github/workflows/git-heatmap.py --author="Kenneth Hoste" . > heatmap.dat
-              cat heatmap.dat
-              git log --pretty=format:"%H %ct %an %ae %ce" | head -n 20
+              gnuplot heatmap.dat
