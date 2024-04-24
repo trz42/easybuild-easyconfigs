@@ -15,10 +15,10 @@ arguments = parser.parse_args()
 directory = os.path.join(arguments.directory, ".git")
 author    = arguments.author or ""
 
-commits   = subprocess.check_output( ["git", "--git-dir=%s" % directory,
-                                             "log",
-                                             "--pretty=format:%ct",
-                                             "--author=%s" % author ] )
+commits   = subprocess.check_output( ["git", 
+                                      "log",
+                                      "--pretty=format:%ct",
+                                      "--author=%s" % author ] )
 counts = [ [0]*24 for _ in range(7) ]
 
 for commit in commits.decode().split():
@@ -27,7 +27,6 @@ for commit in commits.decode().split():
     col = d.hour
 
     counts[row][col] += 1
-
 print('set size ratio 7.0/24.0\n'
       'set xrange [-0.5:23.5]\n'
       'set yrange [-0.5: 6.5]\n'

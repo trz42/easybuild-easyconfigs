@@ -33,5 +33,5 @@ jobs:
 
         - name: Create heatmap
           run: |
-              .github/workflows/git-heatmap.py --author=boegel . > heatmap.dat
+              .github/workflows/git-heatmap.py --author="Kenneth Hoste" . > heatmap.dat
               cat heatmap.dat
